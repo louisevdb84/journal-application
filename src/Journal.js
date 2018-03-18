@@ -73,12 +73,15 @@ class Journal extends React.Component {
     render() {       
       
     return (
-        <div> 
+        <div className = "container entryContainer"> 
+
+            
             {this.state.username && this.state.username === sessionStorage.getItem("user") ?
                 <div>
                     <JournalNav username={this.state.username}></JournalNav>  
-                    <h1>New Entry</h1>                    
-                    <button onClick={this.onListenClick.bind(this)}>Listen to microphone</button>                    
+                    <h1>New Entry</h1>   
+                    <br/>
+                    <button class = "btn btn-primary btn-round btn-lg" onClick={this.onListenClick.bind(this)}>Listen to microphone</button>                    
                     <JournalNewEntry username={this.state.username} onSubmitJournal={this.onSubmitJournal}> </JournalNewEntry>
                     <div style={{ fontSize: '40px' }}>{this.state.text}</div>                                
                    

@@ -7,32 +7,38 @@ class JournalNewEntry extends React.Component {
 
     render() {
         return (
-            <div className=''>
-                <div className="">
-                    <fieldset id="NewEntry" className="">
-                        <legend className="">New Entry</legend>
-                        <div className="">
-                            <label className="" htmlFor="entrydate">Entry Date</label>
-                            <input className="" type="date" name="entrydate" id="entrydate" />
-                        </div>
-                        <div className="">
-                            <label className="" htmlFor="topic">Topic</label>
-                            <input className="" type="text" name="topic" id="topic" />
-                        </div>
-                        <div className="">
-                            <label className="" htmlFor="entry">Entry</label>
-                            <textarea className="" type="text" name="entry" id="entry" />
-                        </div>
-            
-                    </fieldset>
-                    <div className="">
-                        <input
-                            onClick={this.props.onSubmitJournal}
-                            type="submit"
-                            value="Accept"
-                        />
+
+
+            <div>
+                <form>
+                    <br />        
+                    <br />
+                    <br/>
+              <div class="form-group">
+                        <label for="entrydate" Entry Date></label>
+                        <div class='input-group date' id='datetimepicker'>        
+                  <input type='text' class="form-control datetimepicker" name="entrydate" id="entrydate" placeholder="Pick entry date" />
+                  <div class="form-control-feedback"></div>  
                     </div>
+                    </div>
+                    
+                  
+
+
+              <div class="form-group">
+                <label for="topic">Topic</label>
+                <input type="text" class="form-control" id="topic" name="topic" placeholder="Topic" />
+                <div class="form-control-feedback"></div>         
                 </div>
+                <div class="form-group">
+                    <label for="entry">Entry</label>
+                    <textarea type="text" class="form-control" rows = "10" id="entry" name="entry" placeholder="Type or speak" />
+                    <div class="form-control-feedback"></div>         
+                  </div>      
+              <div className = "submit">  
+                  <button onClick={this.props.onSubmitJournal} type="submit" value="Accept" class="btn btn-primary">Submit</button>                  
+                </div>                        
+            </form>
             </div>
         );
     }

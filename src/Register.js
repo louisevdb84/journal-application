@@ -38,41 +38,36 @@ class Register extends React.Component {
 
   render() {    
     return (
-      <div className="">       
-          <main className="">
-            <div className="">
-              <fieldset id="sign_up" className="">
-                <legend className="">Register</legend>
-                <div className="">
-                  <label className="" htmlFor="name">Name</label>
-                  <input className="" type="text" name="name" id="name" />
-                </div>
-                <div className="">
-                  <label className="" htmlFor="surname">Surname</label>
-                  <input className="" type="text" name="surname" id="surname" />
-                </div>
-                <div className="">
-                  <label className="" htmlFor="username">User Name</label>
-                  <input className="" type="text" name="username" id="username" />
-                </div>
-                <div className="">
-                  <label className="" htmlFor="password">Password</label>
-                  <input className="" type="password" name="password" id="password" />
-                </div>
-              
-              </fieldset>
-              <div className="">
-                <input
-                  onClick={this.onSubmitSignIn}
-                  className=""
-                  type="submit"
-                  value="Register"
-                />
-              </div>
-            </div>
-            <UISref to="signin"><a className="nav-link" data-placement="bottom">Sign In</a></UISref>
-          </main>   
-        } 
+
+      <div className = "login">
+      <form>
+          <h1 className="heading">Register</h1>
+          <div class="form-group">
+          <label for="username">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" />
+            <div class="form-control-feedback"></div>  
+          </div>
+          <div class="form-group">
+          <label for="surname">Surname</label>
+            <input type="text" class="form-control" id="surname" placeholder="Enter surname" />
+            <div class="form-control-feedback"></div>  
+        </div>  
+        <div class="form-group">
+          <label for="username">User Name</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" />
+            <div class="form-control-feedback"></div>  
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" />
+        </div>
+        <div className = "submit">  
+            <button onClick={this.onSubmitSignIn} value="Register" type="submit" class="btn btn-primary">Submit</button>
+            
+          </div>        
+          <br/>
+          <UISref to="signin"><a className="">Sign In</a></UISref>    
+      </form>
       </div>
     );
   }

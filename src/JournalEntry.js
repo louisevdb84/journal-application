@@ -5,12 +5,15 @@ const JournalEntry = ({username, entrydate, topic, entry}) => {
         <div className = ''>
             
             <div>
-                <h5>{username}</h5>
-                <p>{topic}</p>
-                <p>{entrydate}</p>                
-                <p>{entry}</p>
-                <button>Edit</button>
-                <button>Delete</button>
+                <div class="card" style={{ width: "100%" }}>
+                <div class="card-body">
+                    <h5 class="card-title">{topic}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{entrydate}</h6>
+                    <p class="card-text">{entry}</p>
+                    <a href="" class="card-link">Edit</a>
+                    <a href="" class="card-link">Delete</a>
+                </div>
+            </div>
             </div>
         </div>    
     );

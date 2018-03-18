@@ -2,13 +2,15 @@ import React from 'react';
 import JournalEntryList from './JournalEntryList';
 import SignIn from './SignIn';
 import JournalNav from './JournalNav';
+import JournalSearch from './JournalSearch';
 
 class JournalDisplay extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
           journalEntries: [],
-          username: this.props.$stateParams.username
+          username: this.props.$stateParams.username,
+          searchField: ''
       }    
 
     }    
@@ -39,15 +41,15 @@ class JournalDisplay extends React.Component {
     render() {       
       
     return (
-        <div> 
-            
+        <div className = "container entryContainer">             
             {this.state.username && this.state.username === sessionStorage.getItem("user")?
                 <div>
                     <JournalNav username={this.state.username}></JournalNav>    
-
-                    <p>Signed in as {this.state.username}</p> 
                     {this.state.journalEntries.constructor === Array ?
-                        <JournalEntryList entries={this.state.journalEntries}></JournalEntryList>                        
+                        <div>
+                            <JournalSearch></JournalSearch>
+                            <JournalEntryList entries={this.state.journalEntries}></JournalEntryList>                        
+                        </div>    
                         :
                         <div>No journal entries captured</div>
                     }    
