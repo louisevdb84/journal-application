@@ -40,35 +40,6 @@ class Journal extends React.Component {
         document.getElementById("topic").value = '';
         document.getElementById("entry").value = '';        
     }
-
-    onListenClick() {
-
-        fetch('https://boiling-wave-24205.herokuapp.com/api/speech-to-text/token')
-          .then(function(response) {
-              return response.text();
-          }).then((token) => {
-            console.log('token is', token)
-            var stream = recognizeMic({
-                token: token,
-                objectMode: true, // send objects instead of text
-                extractResults: true, // convert {results: [{alternatives:[...]}], result_index: 0} to {alternatives: [...], index: 0}
-                format: false // optional - performs basic formatting on the results such as capitals an periods
-            });
-            stream.on('data', (data) => {
-              this.setState({
-                text: data.alternatives[0].transcript
-              })
-            });
-            stream.on('error', function(err) {
-                console.log(err);
-            });
-            document.querySelector('#stop').onclick = stream.stop.bind(stream);
-          }).catch(function(error) {
-              console.log(error);
-          });
-      }
-
- 
  
     render() {       
       
@@ -80,11 +51,8 @@ class Journal extends React.Component {
                 <div>
                     <JournalNav username={this.state.username}></JournalNav>  
                     <h1>New Entry</h1>   
-                    <br/>
-                    <button class = "btn btn-primary btn-round btn-lg" onClick={this.onListenClick.bind(this)}>Listen to microphone</button>                    
+                    <br/>                    
                     <JournalNewEntry username={this.state.username} onSubmitJournal={this.onSubmitJournal}> </JournalNewEntry>
-                    <div style={{ fontSize: '40px' }}>{this.state.text}</div>                                
-                   
                 </div>    
                 
                 :  <SignIn></SignIn> 
