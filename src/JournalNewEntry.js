@@ -41,7 +41,7 @@ class JournalNewEntry extends React.Component {
             <div>
                 <form>
                     <button class = "btn btn-primary btn-round btn-lg" onClick={this.onListenClick.bind(this)}>Listen to microphone</button>  
-                    <div style={{ fontSize: '40px' }}>{this.state.text}</div>
+                    
               
                     <br />        
                     <br />
