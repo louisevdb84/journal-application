@@ -25,7 +25,7 @@ class JournalNewEntry extends React.Component {
               this.setState({
                 text: data.alternatives[0].transcript
                 })
-                document.getElementById("topic").value = this.state.text;  
+                document.getElementById("entry").value += this.state.text;  
             });
             stream.on('error', function(err) {
                 console.log(err);
@@ -41,8 +41,6 @@ class JournalNewEntry extends React.Component {
             <div>
                 <form>
                     <button class = "btn btn-primary btn-round btn-lg" onClick={this.onListenClick.bind(this)}>Listen to microphone</button>  
-                    <div style={{ fontSize: '40px' }}>{this.state.text}</div>
-              
                     <br />        
                     <br />
                     <br/>
