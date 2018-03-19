@@ -24,12 +24,13 @@ class JournalNewEntry extends React.Component {
               this.setState({
                 text: data.alternatives[0].transcript
                 })
+                document.getElementById("entry").value += this.state.text;    
                 
             });
             stream.on('error', function(err) {
                 console.log(err);
               });
-            document.getElementById("entry").value += this.state.text;    
+            
             document.querySelector('#stop').onclick = stream.stop.bind(stream);
           }).catch(function(error) {
               console.log(error);

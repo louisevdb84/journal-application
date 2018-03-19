@@ -37,7 +37,7 @@ class Signin extends React.Component {
 
   render() {
     return (
-      <div className = "login">
+      <div className = "container">
       <form>
         <h1 className="heading">Sign In</h1>
         <div class="form-group">

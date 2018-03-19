@@ -39,7 +39,7 @@ class Register extends React.Component {
   render() {    
     return (
 
-      <div className = "login">
+      <div className = "container">
       <form>
           <h1 className="heading">Register</h1>
           <div class="form-group">
