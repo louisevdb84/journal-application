@@ -3,6 +3,7 @@ import Signin from './SignIn';
 import Register from './Register';
 import JournalDisplay from './JournalDisplay';
 import Journal from './Journal';
+import JournalEdit from './JournalEdit';
 
 const appState = {
     name: 'app',
@@ -43,5 +44,16 @@ const JournalDisplayState = {
     url: '/display/:username',
     component: JournalDisplay
 };
+
+const EditState = {
+    //parent: 'home',
+    name: 'edit',
+    url: '/edit/',
+    params: {entry: null},
+    component: JournalEdit       
+};
   
-export default [journalState, JournalDisplayState, registerState, homeState, appState, signinState];
+
+  
+  
+export default [EditState, journalState, JournalDisplayState, registerState, homeState, appState, signinState];

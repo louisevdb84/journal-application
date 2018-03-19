@@ -9,15 +9,23 @@ class JournalDisplay extends React.Component {
       super(props);
       this.state = {
           journalEntries: [],
-          username: this.props.$stateParams.username,
-          searchField: ''
+          username: sessionStorage.getItem("user"),
+          searchString: '',
+          searchDate: ''
       }    
 
     }    
 
-    getJournalEntries = () => {
-        var url = 'https://boiling-wave-24205.herokuapp.com/getjournal/' + this.state.username ;        
-        fetch(url)
+    getJournalEntries = (searchString = "") => {
+        fetch('https://boiling-wave-24205.herokuapp.com/getjournal', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                username: this.state.username,
+                searchString: searchString,
+                searchDate: this.state.searchDate
+            })
+        })
         .then(response => response.json())
             .then(entry => {                 
                 if (entry.length)
@@ -30,8 +38,21 @@ class JournalDisplay extends React.Component {
                     alert(entry);
                 }
                 
-            })    
+            })                    
     }
+
+    searchChange = (event) => {                
+        this.setState({ searchString: event.target.value });        
+        this.getJournalEntries(event.target.value);
+    }
+
+    sortDates = function (arrays) {
+        arrays.sort(function (a, b) {  
+        return new Date(b.entrydate) - new Date(a.entrydate);
+           
+        });
+    }
+    
 
     componentDidMount() {
         this.getJournalEntries();
@@ -39,15 +60,19 @@ class JournalDisplay extends React.Component {
 
  
     render() {       
-      
-    return (
+        if (this.state.journalEntries.length && this.state.journalEntries.constructor === Array)
+        {            
+            this.sortDates(this.state.journalEntries);                        
+        }    
+        
+        return (
         <div className = "container entryContainer">             
             {this.state.username && this.state.username === sessionStorage.getItem("user")?
                 <div>
-                    <JournalNav username={this.state.username}></JournalNav>    
+                        <JournalNav username={this.state.username}></JournalNav>    
+                        <JournalSearch searchString={this.state.searchString} searchChange={this.searchChange}></JournalSearch>    
                     {this.state.journalEntries.constructor === Array ?
-                        <div>
-                            <JournalSearch></JournalSearch>
+                        <div>                            
                             <JournalEntryList entries={this.state.journalEntries}></JournalEntryList>                        
                         </div>    
                         :

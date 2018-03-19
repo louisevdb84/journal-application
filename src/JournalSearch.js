@@ -1,6 +1,6 @@
 import React from 'react';
 
-const JournalSearch = ({searchField, searchChange}) => {    
+const JournalSearch = ({searchString, searchChange}) => {    
     return (
         <div className='row'>
         <div className = 'col-md-6'>    

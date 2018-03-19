@@ -1,5 +1,6 @@
 import React from 'react';
 import recognizeMic from 'watson-speech/speech-to-text/recognize-microphone';
+import JournalEditAdd from './JournalEditAdd';
 
 class JournalNewEntry extends React.Component {
     constructor(props) {
@@ -20,7 +21,8 @@ class JournalNewEntry extends React.Component {
                 extractResults: true, // convert {results: [{alternatives:[...]}], result_index: 0} to {alternatives: [...], index: 0}
                 format: false // optional - performs basic formatting on the results such as capitals an periods
             });
-            stream.on('data', (data) => {
+              stream.on('data', (data) => {
+                  console.log(data);
               this.setState({
                 text: data.alternatives[0].transcript
                 })
@@ -30,7 +32,7 @@ class JournalNewEntry extends React.Component {
             stream.on('error', function(err) {
                 console.log(err);
               });
-            
+              console.log(this.state.text);
             document.querySelector('#stop').onclick = stream.stop.bind(stream);
           }).catch(function(error) {
               console.log(error);
@@ -41,31 +43,19 @@ class JournalNewEntry extends React.Component {
         return (
             <div>
                 <form>
-                    <button class="btn btn-primary btn-round btn-lg" onClick={this.onListenClick.bind(this)}>Record Topic</button>  
-                    <button id="stop" class = "btn btn-primary btn-round btn-lg" onClick={this.onListenClick.bind(this)}>Stop Recording</button>  
-                    <br />        
+                
+                    <ul class="nav nav-pills nav-pills-primary">
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" onClick={this.onListenClick.bind(this)}>Record Entry</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="stop" class="nav-link" data-toggle="tab" onClick={this.onListenClick.bind(this)}>Stop</a>
+                        </li>                        
+                    </ul>
+     
                     <br />
                     <br/>
-              <div class="form-group">
-                    <label for="entrydate" Entry Date></label>                        
-                    <input type='date' class="form-control datetimepicker" name="entrydate" id="entrydate" placeholder="Pick entry date" />
-                  <div class="form-control-feedback"></div>  
-                    
-                </div>
-
-              <div class="form-group">
-                <label for="topic">Topic</label>
-                <input type="text" class="form-control" id="topic" name="topic" placeholder="Topic" />
-                <div class="form-control-feedback"></div>         
-                </div>
-                <div class="form-group">
-                    <label for="entry">Entry</label>
-                    <textarea type="text" class="form-control" rows = "10" id="entry" name="entry" placeholder="Type or speak" />
-                    <div class="form-control-feedback"></div>         
-                  </div>      
-              <div className = "submit">  
-                  <button onClick={this.props.onSubmitJournal} type="submit" value="Accept" class="btn btn-primary">Submit</button>                  
-                </div>                        
+                    <JournalEditAdd username={sessionStorage.getItem("user")}></JournalEditAdd>
             </form>
             </div>
         );
