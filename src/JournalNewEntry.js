@@ -13,8 +13,7 @@ class JournalNewEntry extends React.Component {
         fetch('https://boiling-wave-24205.herokuapp.com/api/speech-to-text/token')
           .then(function(response) {
               return response.text();
-          }).then((token) => {
-            console.log('token is', token)
+          }).then((token) => {            
             var stream = recognizeMic({
                 token: token,
                 objectMode: true, // send objects instead of text
@@ -25,11 +24,12 @@ class JournalNewEntry extends React.Component {
               this.setState({
                 text: data.alternatives[0].transcript
                 })
-                document.getElementById("entry").value += this.state.text;  
+                
             });
             stream.on('error', function(err) {
                 console.log(err);
-            });
+              });
+            document.getElementById("entry").value += this.state.text;    
             document.querySelector('#stop').onclick = stream.stop.bind(stream);
           }).catch(function(error) {
               console.log(error);
@@ -40,16 +40,16 @@ class JournalNewEntry extends React.Component {
         return (
             <div>
                 <form>
-                    <button class = "btn btn-primary btn-round btn-lg" onClick={this.onListenClick.bind(this)}>Listen to microphone</button>  
+                    <button class="btn btn-primary btn-round btn-lg" onClick={this.onListenClick.bind(this)}>Record Topic</button>  
+                    <button id="stop" class = "btn btn-primary btn-round btn-lg" onClick={this.onListenClick.bind(this)}>Stop Recording</button>  
                     <br />        
                     <br />
                     <br/>
               <div class="form-group">
-                        <label for="entrydate" Entry Date></label>
-                        <div class='input-group date' id='datetimepicker'>        
-                  <input type='text' class="form-control datetimepicker" name="entrydate" id="entrydate" placeholder="Pick entry date" />
+                    <label for="entrydate" Entry Date></label>                        
+                    <input type='date' class="form-control datetimepicker" name="entrydate" id="entrydate" placeholder="Pick entry date" />
                   <div class="form-control-feedback"></div>  
-                    </div>
+                    
                 </div>
 
               <div class="form-group">
