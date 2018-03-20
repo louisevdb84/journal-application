@@ -21,17 +21,19 @@ class JournalEditAdd extends React.Component {
             .then(response => response.json())
             .then(entry => {
             
-                if (entry.id) {
-                    alert(entry.topic);
+                if (entry.success) {
+                    document.getElementById("entrydate").valueAsDate = new Date(this.props.entrydate);
+                    document.getElementById("topic").value = '';
+                    document.getElementById("entry").value = '';  
+
+                    document.querySelector('.form-control-feedback').innerHTML = entry.message;  
                 }
-                else {
-                    alert(entry);
+                else {  
+                    document.querySelector('.form-control-feedback').innerHTML = entry;  
                 }
             })
             .catch(err=> console.log(err));
-        document.getElementById("entrydate").value = '';
-        document.getElementById("topic").value = '';
-        document.getElementById("entry").value = '';        
+      
     }
 
     render() {
@@ -41,19 +43,20 @@ class JournalEditAdd extends React.Component {
                     <div className="form-group">
                         <label htmlFor="entrydate"> Entry Date</label>
                         <input type='date' className="form-control" name="entrydate" id="entrydate" />
-                        <div className="form-control-feedback"></div>
+                        
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="topic">Topic</label>
                         <input defaultValue={this.props.topic} type="text" className="form-control" id="topic" name="topic" placeholder="Topic" />
-                        <div className="form-control-feedback"></div>
+                        
                     </div>
                     <div className="form-group">
                         <label htmlFor="entry">Entry</label>
                         <textarea defaultValue={this.props.entry} type="text" className="form-control" rows="10" id="entry" name="entry" placeholder="Type or press Record Entry to speak" />
                         <div className="form-control-feedback"></div>
-                    </div>
+                </div>
+                <br/>
                     <div className="submit">
                         <button onClick={this.onSubmitJournal} type="submit" value="Accept" className="btn btn-primary">Submit</button>
                     </div>      

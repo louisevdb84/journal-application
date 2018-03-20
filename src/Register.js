@@ -31,7 +31,7 @@ class Register extends React.Component {
           router.stateService.go('journal', { username: this.state.user.username });          
         }
         else {
-          alert(user);
+          document.querySelector('.form-control-feedback').innerHTML = user;  
         }
       })
   }
@@ -44,22 +44,24 @@ class Register extends React.Component {
           <div class="form-group">
           <label for="username">Name</label>
             <input type="text" class="form-control" id="name" placeholder="Enter your name" />
-            <div class="form-control-feedback"></div>  
+            
           </div>
           <div class="form-group">
           <label for="surname">Surname</label>
             <input type="text" class="form-control" id="surname" placeholder="Enter surname" />
-            <div class="form-control-feedback"></div>  
+            
         </div>  
         <div class="form-group">
           <label for="username">User Name</label>
             <input type="text" class="form-control" id="username" placeholder="Enter username" />
-            <div class="form-control-feedback"></div>  
+            
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" placeholder="Password" />
+          <div class="form-control-feedback"></div>  
         </div>
+        <br/>
         <div className = "submit">  
             <button onClick={this.onSubmitSignIn} value="Register" type="submit" class="btn btn-primary">Submit</button>
             

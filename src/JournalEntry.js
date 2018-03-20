@@ -34,9 +34,14 @@ const JournalEntry = ({ username, entrydate, topic, entry, id }) => {
                     <h5 className="card-title">{topic}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">{entrydate}</h6>
                         <p className="card-text">{entry}</p>
+
+                        <div className="form-group">
+                            <div className="form-control-feedback"></div>
+                        </div>
+                        
                         <div className="editDeleteBtn">
                         <UISref to="edit" params={{ entry: { id: { id }, entrydate: { entrydate }, username: { username }, topic: { topic }, entry: { entry } } }} className="btn btn-primary btn-sm"><a>Edit</a></UISref>
-                        <a className="btn btn-primary btn-sm" onClick={onDelete} href="">Delete</a>
+                        <a className="btn btn-primary btn-sm" onClick={onDelete} >Delete</a>
                     </div>
                     
                 </div>
@@ -47,3 +52,5 @@ const JournalEntry = ({ username, entrydate, topic, entry, id }) => {
 }
 
 export default JournalEntry;
+
+

@@ -19,9 +19,6 @@
   margin-top: 80px;  
   
 }
-UISref {
-  color: pink;
-}
 
 .heading {
   font-weight: bold;
@@ -29,12 +26,21 @@ UISref {
 
 .navbar .navbar-nav .nav-item .nav-link{
   font-size: 15px;
-  font-weight: bold;
+  font-weight: bold;  
+}
+
+.entryContainer .navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn), [class*="bg"] .navbar-nav .nav-item .nav-link:not(.btn){
+  /* color:#66615b; */
+  color:black;
+}
+
+.entryContainer .navbar[class*="bg-"] .navbar-toggler .navbar-toggler-bar, .navbar.navbar-transparent .navbar-toggler .navbar-toggler-bar{
+  background: #66615B;
 }
 
 .navbar .navbar-nav .nav-item .nav-link:hover{
   text-decoration: underline;
-  color:black;    
+  
 }
 
 .navbar .navbar-nav .nav-item .nav-link.static:hover{
@@ -46,7 +52,7 @@ UISref {
 .navbar .navbar-nav .nav-item .nav-link.active{  
   background: #51cbce;
   border-radius: 25px;
-  color: white;
+  /* color: white; */
 }
 
 h5.card-title{  
@@ -70,6 +76,7 @@ p.card-text{
 .editDeleteBtn .btn{
   margin-right: 10px;
   margin-top: 10px;
+  color: white;
 }
 
 a.login_Register{
@@ -87,4 +94,27 @@ a.login_Register:hover{
   background: url("./coverImage.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.editDeleteBtn a:not([href]):not([tabindex]){
+  color:white;
+}
+
+
+.navImage{
+  /* background: url('./coverImage.jpg'); */
+ 
+  background-position: center;
+  /* z-index: -1; */
+  height: 200px;
+  top: 0px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+
+}
+
+.navbar.navbar-transparent {
+  padding-top: 0px;
+
 }

@@ -6,10 +6,10 @@ const JournalNav = ({ username }) => {
     
     return (
         
-            <nav className="navbar navbar-expand-md fixed-top" color-on-scroll="500">
+            <nav className="navbar navbar-expand-lg navbar-transparent" color-on-scroll="500">
             <div className="container">     
             <div className="navbar-translate">    
-                <button className="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-bar"></span>
                         <span className="navbar-toggler-bar"></span>
                         <span className="navbar-toggler-bar"></span>
@@ -35,7 +35,8 @@ const JournalNav = ({ username }) => {
                                 <UISref to="home"><a className="nav-link">Sign Out</a></UISref>           
                             </li>
                         
-                     </ul>   
+                    </ul>  
+                    
                 </div>
             </div>
                 
