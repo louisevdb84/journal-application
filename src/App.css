@@ -82,3 +82,9 @@ a.login_Register:hover{
   text-decoration: underline;
   font-weight: bold;
 }
+
+.page-header {
+  background: url("./coverImage.jpg");
+  background-size: cover;
+  background-position: center;
+}

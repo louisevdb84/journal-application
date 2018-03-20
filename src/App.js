@@ -13,7 +13,7 @@ class App extends Component {
     sessionStorage.setItem("user", "");    
 }    
 
-  render() {
+    render() {
     return (
         <div className="App">
         <nav class="navbar navbar-expand-md fixed-top navbar-transparent" color-on-scroll="500">
@@ -64,7 +64,7 @@ class App extends Component {
     </nav>
     
     <div class="wrapper">
-          <div class="page-header section-dark" style={{ "background-image": "url('https://cdn.pixabay.com/photo/2018/03/19/18/20/wood-3240764_960_720.jpg')"}}>
+          <div class="page-header section-dark">
             <div class="filter"></div>
             <div class="content-center">
               
