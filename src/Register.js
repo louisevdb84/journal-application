@@ -39,8 +39,7 @@ class Register extends React.Component {
   render() {    
     return (
 
-      <div className = "container">
-      <form>
+      <div className = "container">      
           <h1 className="heading">Register</h1>
           <div class="form-group">
           <label for="username">Name</label>
@@ -66,8 +65,8 @@ class Register extends React.Component {
             
           </div>        
           <br/>
-          <UISref to="signin"><a className="">Sign In</a></UISref>    
-      </form>
+        <UISref to="signin"><a className="login_Register">Sign In</a></UISref>          
+        <UISref to="home"><a className="login_Register">Home</a></UISref>  
       </div>
     );
   }

@@ -70,7 +70,10 @@ class JournalDisplay extends React.Component {
             {this.state.username && this.state.username === sessionStorage.getItem("user")?
                 <div>
                         <JournalNav username={this.state.username}></JournalNav>    
+                        <h1 className= "heading">Display Entries</h1> 
                         <JournalSearch searchString={this.state.searchString} searchChange={this.searchChange}></JournalSearch>    
+                        <br />
+                        <br/>
                     {this.state.journalEntries.constructor === Array ?
                         <div>                            
                             <JournalEntryList entries={this.state.journalEntries}></JournalEntryList>                        

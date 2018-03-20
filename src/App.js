@@ -23,8 +23,7 @@ class App extends Component {
                     <span class="navbar-toggler-bar"></span>
                     <span class="navbar-toggler-bar"></span>
                     <span class="navbar-toggler-bar"></span>
-                </button>
-                  <div class="navbar-brand">Journal</div>
+                </button>                  
               </div>
                 <div class="collapse navbar-collapse" id="navbarToggler">
                         <ul class="navbar-nav ml-auto">       
@@ -65,20 +64,20 @@ class App extends Component {
     </nav>
     
     <div class="wrapper">
-          <div class="page-header section-dark" style={{ "background-image": "url('https://images.unsplash.com/photo-1414919823178-e9d9d0afd0ac?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=92d1d7a9497c3ce4520d51b6dac999bd&auto=format&fit=crop&w=1146&q=80')"}}>
+          <div class="page-header section-dark" style={{ "background-image": "url('https://cdn.pixabay.com/photo/2018/03/19/18/20/wood-3240764_960_720.jpg')"}}>
             <div class="filter"></div>
             <div class="content-center">
               
               
                 <div class="container">
                   <div class="title-brand">
-                    <h1 class="presentation-title">Speech to Text Journal</h1>
+                    <h1 class="presentation-title">Journal</h1>
                     
                 </div>
                   <h2 class="presentation-subtitle text-center">This application uses speech recognition to convert your words into a journal entry.</h2>
                             <br />
                             <br/>          
-                            <UISref to="signin"><button className="btn btn-round">Continue</button></UISref>
+                            <UISref to="signin"><button className="btn btn-round btn-lg">Continue</button></UISref>
               
               
               </div>              

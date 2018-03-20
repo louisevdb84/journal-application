@@ -39,24 +39,21 @@ class JournalNewEntry extends React.Component {
           });
       }
     
-    render() {
+    render() {        
         return (
-            <div>
-                <form>
-                
-                    <ul class="nav nav-pills nav-pills-primary">
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" onClick={this.onListenClick.bind(this)}>Record Entry</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="stop" class="nav-link" data-toggle="tab" onClick={this.onListenClick.bind(this)}>Stop</a>
-                        </li>                        
-                    </ul>
-     
-                    <br />
-                    <br/>
-                    <JournalEditAdd username={sessionStorage.getItem("user")}></JournalEditAdd>
-            </form>
+            <div>               
+                <ul class="nav nav-pills nav-pills-primary">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" onClick={this.onListenClick.bind(this)}>Record Entry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="stop" class="nav-link" data-toggle="tab" onClick={this.onListenClick.bind(this)}>Stop</a>
+                    </li>                        
+                </ul>
+
+                <br />
+                <br/>
+                <JournalEditAdd entrydate={new Date()} username={sessionStorage.getItem("user")}></JournalEditAdd>            
             </div>
         );
     }

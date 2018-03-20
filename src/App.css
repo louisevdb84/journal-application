@@ -2,31 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .login{
   margin-top: 80px;
   margin-left: 30%;
@@ -36,6 +11,7 @@
 
 .heading{
   padding-bottom: 50px;
+  padding-top: 20px;
   
 }
 
@@ -43,4 +19,66 @@
   margin-top: 80px;  
   
 }
+UISref {
+  color: pink;
+}
 
+.heading {
+  font-weight: bold;
+}
+
+.navbar .navbar-nav .nav-item .nav-link{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover{
+  text-decoration: underline;
+  color:black;    
+}
+
+.navbar .navbar-nav .nav-item .nav-link.static:hover{
+  text-decoration: none;
+  color:#66615B;   
+  cursor: default;   
+}
+
+.navbar .navbar-nav .nav-item .nav-link.active{  
+  background: #51cbce;
+  border-radius: 25px;
+  color: white;
+}
+
+h5.card-title{  
+  font-weight: bold;
+  font-size: 25px;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+h6, .h6{  
+  /* font-size: 17px; */
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+p.card-text{
+  color: black;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.editDeleteBtn .btn{
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+a.login_Register{
+  font-size: 1.2em;
+  font-weight: 500;
+  padding-right: 20px;
+}
+
+a.login_Register:hover{
+  text-decoration: underline;
+  font-weight: bold;
+}

@@ -17,14 +17,11 @@ class Journal extends React.Component {
     render() {       
       
     return (
-        <div className = "container entryContainer"> 
-
-            
+        <div className = "container entryContainer">             
             {this.state.username && this.state.username === sessionStorage.getItem("user") ?
                 <div>
                     <JournalNav username={this.state.username}></JournalNav>  
-                    <h1>New Entry</h1>   
-                    <br/>                    
+                    <h1 className= "heading">Journal Entry</h1>                         
                     <JournalNewEntry username={this.state.username}> </JournalNewEntry>
                 </div>    
                 

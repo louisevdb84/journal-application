@@ -24,6 +24,7 @@ class Signin extends React.Component {
       
       .then(response => response.json())
       .then(user => {
+        console.log('asd');
         if (user.id) {
           this.setState({ user: user });
           sessionStorage.setItem("user", this.state.user.username);
@@ -38,7 +39,7 @@ class Signin extends React.Component {
   render() {
     return (
       <div className = "container">
-      <form>
+      
         <h1 className="heading">Sign In</h1>
         <div class="form-group">
           <label for="username">User Name</label>
@@ -54,8 +55,9 @@ class Signin extends React.Component {
             
           </div>        
           <br/>
-          <UISref to="register"><a className="">Register</a></UISref>    
-      </form>
+        <UISref to="register"><a className="login_Register">Register</a></UISref>    
+        <UISref to="home"><a className="login_Register">Home</a></UISref>    
+      
     </div>
     )
   }

@@ -12,17 +12,20 @@ const JournalEntry = ({ username, entrydate, topic, entry, id }) => {
         })
             .then(response => response.json())
             .then(entry => {
-            
                 if (entry.id) {
-                    alert(entry.topic);
+                    document.location.reload();    
                 }
                 else {
                     alert(entry);
                 }
             })
+        
    
     }
+    entrydate = (new Date(entrydate)).toDateString();
+
     return (
+        
         <div className = ''>
             
             <div>
@@ -31,9 +34,10 @@ const JournalEntry = ({ username, entrydate, topic, entry, id }) => {
                     <h5 className="card-title">{topic}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">{entrydate}</h6>
                         <p className="card-text">{entry}</p>
-                        <UISref to="edit" params={{ entry: {id: {id}, entrydate: { entrydate }, username: { username }, topic: { topic }, entry: {entry} } }} className="card-link"><a>Edit</a></UISref>    
-                        <a className="card-link" onClick={onDelete}>Delete</a>   
-                        
+                        <div className="editDeleteBtn">
+                        <UISref to="edit" params={{ entry: { id: { id }, entrydate: { entrydate }, username: { username }, topic: { topic }, entry: { entry } } }} className="btn btn-primary btn-sm"><a>Edit</a></UISref>
+                        <a className="btn btn-primary btn-sm" onClick={onDelete} href="">Delete</a>
+                    </div>
                     
                 </div>
             </div>
