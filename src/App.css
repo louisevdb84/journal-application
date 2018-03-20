@@ -52,8 +52,10 @@
 .navbar .navbar-nav .nav-item .nav-link.active{  
   background: #51cbce;
   border-radius: 25px;
-  /* color: white; */
+  color: white;
 }
+
+
 
 h5.card-title{  
   font-weight: bold;
@@ -118,3 +120,6 @@ a.login_Register:hover{
   padding-top: 0px;
 
 }
+ /* .entryContainer .navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn), .active, [class*="bg"] .navbar-nav .nav-item .nav-link:not(.btn) .active {  
+    color: white;
+} */
