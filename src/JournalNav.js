@@ -20,6 +20,9 @@ const JournalNav = ({ username }) => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
+                            <UISrefActive class = "active"><UISref to="home" className="nav-link"><a href="">Home<span className="sr-only">(current)</span></a></UISref></UISrefActive>
+                        </li>    
+                        <li className="nav-item">
                             <UISrefActive class = "active"><UISref to="journal" params={{ username: username }} className="nav-link"><a href="">Journal Entry<span className="sr-only">(current)</span></a></UISref></UISrefActive>
                         </li>
                         <li className="nav-item">

@@ -48,12 +48,12 @@ class JournalEditAdd extends React.Component {
 
                     <div className="form-group">
                         <label htmlFor="topic">Topic</label>
-                        <input defaultValue={this.props.topic} type="text" className="form-control" id="topic" name="topic" placeholder="Topic" />
+                        <input defaultValue={this.props.topic} type="text" className="form-control" id="topic" name="topic" placeholder="Type or press Record Topic for speech to text" />
                         
                     </div>
                     <div className="form-group">
                         <label htmlFor="entry">Entry</label>
-                        <textarea defaultValue={this.props.entry} type="text" className="form-control" rows="10" id="entry" name="entry" placeholder="Type or press Record Entry to speak" />
+                        <textarea defaultValue={this.props.entry} type="text" className="form-control" rows="10" id="entry" name="entry" placeholder="Type or press Record Entry for speech to text" />
                         <div className="form-control-feedback"></div>
                 </div>
                 <br/>

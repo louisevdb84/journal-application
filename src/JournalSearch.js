@@ -1,6 +1,6 @@
 import React from 'react';
 
-const JournalSearch = ({searchString, searchChange}) => {    
+const JournalSearch = ({searchChange, searchDateChange}) => {    
     return (
         <div className='row'>           
             <div className='col-md-2 col-sm-4'>
@@ -8,7 +8,8 @@ const JournalSearch = ({searchString, searchChange}) => {
         </div>        
         <div className = 'col-md-5 col-sm-8'>    
             <div className ='form-group'>
-                <input 
+                    <input 
+                    id = "searchInput"        
                     className='form-control' 
                     type="search" 
                     placeholder="Search Entries"
@@ -22,9 +23,10 @@ const JournalSearch = ({searchString, searchChange}) => {
                 <div className ='form-group'>
                 <input 
                     className='form-control' 
+                    id = "searchInputDate"            
                     type="date" 
                     placeholder="Display by date"
-                    onChange = {searchChange}/>
+                    onChange = {searchDateChange}/>
                 </div>    
             </div>    
         </div>        

@@ -123,3 +123,11 @@ a.login_Register:hover{
  /* .entryContainer .navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn), .active, [class*="bg"] .navbar-nav .nav-item .nav-link:not(.btn) .active {  
     color: white;
 } */
+
+li.nav-item:hover {
+  cursor: pointer; 
+}
+
+#feedback{  
+  color:red;  
+}

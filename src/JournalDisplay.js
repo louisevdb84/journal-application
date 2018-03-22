@@ -9,21 +9,20 @@ class JournalDisplay extends React.Component {
       super(props);
       this.state = {
           journalEntries: [],
-          username: sessionStorage.getItem("user"),
-          searchString: '',
-          searchDate: ''
+          username: sessionStorage.getItem("user"),          
       }    
 
     }    
 
-    getJournalEntries = (searchString = "") => {
+    getJournalEntries = (searchString = "", searchDate = "") => {
+        console.log("Searchdate", searchDate);
         fetch('https://boiling-wave-24205.herokuapp.com/getjournal', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 username: this.state.username,
                 searchString: searchString,
-                searchDate: this.state.searchDate
+                searchDate: searchDate
             })
         })
         .then(response => response.json())
@@ -41,9 +40,14 @@ class JournalDisplay extends React.Component {
             })                    
     }
 
-    searchChange = (event) => {                
-        this.setState({ searchString: event.target.value });        
+    searchChange = (event) => {                        
         this.getJournalEntries(event.target.value);
+        document.getElementById("searchInputDate").value = "";        
+    }
+
+    searchDateChange = (event) => {            
+        this.getJournalEntries("", event.target.value);
+        document.getElementById("searchInput").value = "";
     }
 
     sortDates = function (arrays) {
@@ -73,7 +77,7 @@ class JournalDisplay extends React.Component {
                             <JournalNav username={this.state.username}></JournalNav>                                
                         </div>    
                         <h1 className= "heading">Display Entries</h1> 
-                        <JournalSearch searchString={this.state.searchString} searchChange={this.searchChange}></JournalSearch>    
+                        <JournalSearch searchChange={this.searchChange} searchDateChange={this.searchDateChange}></JournalSearch>    
                         <br />
                         <br/>
                     {this.state.journalEntries.constructor === Array ?

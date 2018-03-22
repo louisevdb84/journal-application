@@ -14,6 +14,7 @@ class App extends Component {
 }    
 
     render() {
+        
     return (
         <div className="App">
         <nav class="navbar navbar-expand-md fixed-top navbar-transparent" color-on-scroll="500">
@@ -74,7 +75,7 @@ class App extends Component {
                     <h1 class="presentation-title">Journal</h1>
                     
                 </div>
-                  <h2 class="presentation-subtitle text-center">This application uses speech recognition to convert your words into a journal entry.</h2>
+                            <h2 class="presentation-subtitle text-center">This app uses speech recognition to convert your words into a journal entry. Designed for Chrome and MS Edge and may not work on other browsers.</h2>                            
                             <br />
                             <br/>          
                             <UISref to="signin"><button className="btn btn-round btn-lg">Continue</button></UISref>
