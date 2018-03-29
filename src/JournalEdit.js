@@ -30,10 +30,8 @@ class JournalNewEntry extends React.Component {
                                 <JournalNav username={this.state.username}></JournalNav>
                                 <h1>Edit</h1>
                                 <br />
-                                <div>
-                                    <form>
-                                        <JournalEditAdd id={id.id} username={username.username} topic={topic.topic} entrydate={entrydate.entrydate} entry={entry.entry}></JournalEditAdd>
-                                    </form>
+                                <div>                                    
+                                    <JournalEditAdd id={id.id} username={username.username} topic={topic.topic} entrydate={entrydate.entrydate} entry={entry.entry}></JournalEditAdd>
                                 </div>
                             </div>
                 

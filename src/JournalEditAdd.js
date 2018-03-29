@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { router } from './router.config';
+
 class JournalEditAdd extends React.Component {    
 
     componentDidMount(){
@@ -26,7 +28,7 @@ class JournalEditAdd extends React.Component {
                     document.getElementById("topic").value = '';
                     document.getElementById("entry").value = '';  
 
-                    document.querySelector('.form-control-feedback').innerHTML = entry.message;  
+                    router.stateService.go('display', { username: this.props.username });
                 }
                 else {  
                     document.querySelector('.form-control-feedback').innerHTML = entry;  
