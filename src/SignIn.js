@@ -40,10 +40,8 @@ class Signin extends React.Component {
     return (
       <div className = "container">
       
-        <h1 className="heading">Sign In</h1>
+        <h1 className="heading">Sign In</h1>        
 
-        <h4 style={{ color: "red" }}>Please Note: You can use username: Demo Password: 123 or create your own account </h4>
-        <br/>
         <div class="form-group">
         
           <label for="username">User Name</label>
