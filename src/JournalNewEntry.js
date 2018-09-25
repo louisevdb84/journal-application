@@ -10,7 +10,8 @@ class JournalNewEntry extends React.Component {
         this.state = {            
            
         }
-    }       
+    }   
+    
    
     recordSpeech = (typeRec) => {        
         console.log("From Main one " + typeRec);
