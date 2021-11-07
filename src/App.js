@@ -23,6 +23,7 @@ class App extends Component {
           <br />
           <div className="container">
             <p>Please note that the speech to text functionality does not work anymore because my free subscription expired</p>
+            <p>Log in with Username: Demo and password 123 or create your own user account</p>
           </div>
         </div>
 
