@@ -20,7 +20,7 @@ class App extends Component {
       <div>
         <Signin></Signin>
         <div className="App" style={{ color: "red" }}>
-          <p>Please note that the speech to text functionality does not work anymore. </p>
+          <p>Please note that the speech to text functionality does not work anymore because my free subscription expired</p>
         </div>
 
       </div>
